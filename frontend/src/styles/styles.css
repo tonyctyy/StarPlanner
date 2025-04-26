@@ -1,0 +1,316 @@
+/* styles.css */
+
+/* Method.tsx */
+
+
+/* Goals.tsx */
+
+.section-content {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  text-align: center;
+  width: max-content;
+  text-wrap: wrap;
+  position: relative;
+  
+}
+
+.section-content.phone{
+  font-size: 12px;
+}
+
+.section-content.tablet{
+  font-size: 16px;
+}
+
+.section-content.desktop{
+  font-size: 20px;
+}
+
+
+.task {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  justify-items: center;
+  justify-content: left;
+  align-items: center;
+  display: flex;
+  text-align: left;
+  font-size: 22px;
+  width:-moz-fit-content;
+  width:fit-content;
+}
+
+.colTitle {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tasks.tsx */
+
+
+.tagRow {
+  justify-content: flex-start;
+}
+
+.tag {
+  border-radius: 10px;
+  width: -moz-fit-content;
+  width: fit-content !important;
+  height: fit-content;
+  margin: 0 5px !important;
+}
+
+.section-title {
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;    
+        width:-moz-fit-content;    
+        width: fit-content;
+        text-wrap: nowrap;
+}
+
+.section-title.phone{
+  font-size: 14px;
+}
+
+.section-title.tablet{
+  font-size: 18px;
+}
+
+.section-title.desktop{
+  font-size: 22px;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* dashboard component such as Goals, Tasks, Method */
+.dashboard-component-background{
+  /* background: #eaf7ff; */
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+  /* make it on the top layer */
+  z-index: 1;
+}
+
+.dashboard-component-titleContainer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard-component-title {
+  font-weight: bold;
+  left: 20px;
+  margin-bottom: -10px;
+  width: fit-content;
+  font-size: 1.25rem;
+}
+
+.dashboard-component-colTitle {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard-component-col {
+  min-width: 320px;
+  padding: 5px;
+  width: 30%;
+}
+
+
+/* modal for adding and evaluating Goals, Tasks, Methods */
+.modal {
+  background: #eaf0fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  margin-top: 10px;
+  width: 100%; 
+  padding: 20px; /* Add padding for better spacing */
+}
+
+.label {
+  width: 100%; /* Make the label full width */
+  box-sizing: border-box; /* Include padding and border in the width */
+  font-size: 1rem; /* Use relative units like 'rem' */
+  margin: 0.1rem 0; /* Add margin for spacing */
+}
+
+.modalTextInput {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 1rem; /* Use relative units like 'rem' */
+  width: 100%; /* Make the textarea full width */
+  box-sizing: border-box; /* Explicitly specify type */
+  height: auto; /* Allow the textarea to expand based on content */
+  min-height: 5rem; /* Set a minimum height */
+  resize: vertical; /* Allow vertical resizing */
+  background-color: #fff;
+  text-align: left;
+}
+
+.modalTextInput-single {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 1rem; /* Use relative units like 'rem' */
+  width: 100%; /* Make the textarea full width */
+  box-sizing: border-box; /* Explicitly specify type */
+  height: auto; /* Allow the textarea to expand based on content */
+}
+
+.modalButton {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  border: none;
+  font-size: 1rem;
+}
+
+.disabledButton {
+  background-color: #888; /* Darken the background color */
+  color: #ccc; /* Adjust the text color */
+  cursor: not-allowed; /* Change cursor to indicate it's not clickable */
+}
+
+.modalSelect {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  width: 100%; /* Make the select full width */
+  box-sizing: border-box; /* Explicitly specify type */
+}
+
+.button-row {
+  display: flex;
+  /* justify-content:  center; */
+  gap: 8px; 
+  margin-top: 0.25rem;
+}
+
+.button-row.column {
+  flex-direction: column;
+}
+
+/* Define styles for the primary button */
+.primary-button {
+  padding: 4px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Define styles for the secondary button */
+.secondary-button {
+  padding: 4px 10px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Hover effect for buttons */
+.button-row button:hover {
+  background-color: #0056b3; /* Hover effect for primary button */
+}
+
+.secondary-button:hover {
+  background-color: #c82333; /* Hover effect for secondary button */
+}
+
+
+.comment-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-option {
+  margin-bottom: 5px; /* Adjust as needed */
+}
+
+.social-style-container {
+  align-items: center; /* Align items vertically */
+  justify-content: space-between; /* Distribute items evenly along the main axis */
+  /* display: flex; */
+  margin-left: 7%;
+  width: 100%; /* Make the container full width */
+}
+
+.scrollable-area {
+  height: 30%;
+  overflow-y: auto; /* Add vertical scrollbar when content overflows */
+}
+
+/* Adjust scrollbar style as needed */
+.scrollbar {
+  overflow-y: auto;
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: rgba(0, 0, 0, 0.5) rgba(0, 0, 0, 0); /* For Firefox */
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 6px; /* Width of the scrollbar */
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5); /* Color of the scrollbar thumb */
+  border-radius: 3px; /* Radius of the scrollbar thumb */
+}
+
+.final-dashboard-title-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.final-dashboard-title {
+  font-weight: bold;
+  margin-left: 1%;
+}
+
+.final-dashboard-container {
+  background: #eaf7ff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 3%;
+}
+
+.final-dashboard-missing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}

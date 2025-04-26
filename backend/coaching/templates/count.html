@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>待人處事風格分數分佈</h2>
+<p>請留意，分數結果只能反映你現在待人處事時的傾向或重心，並不代表你相關的能力。</p>
+
+    <table class="table table-striped">
+        <thead> 
+            <tr>
+                {% for option, count in option_counts.items %}
+                <th>{{ option }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+                {% for option, count  in option_counts.items %}
+                <td>{{ count}}%</td>
+                {% endfor %}
+        </tbody>
+    </table>
+    <a href = "/" class="btn btn-success">返回主頁</a>
+{% endblock %}

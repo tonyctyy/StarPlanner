@@ -1,0 +1,20 @@
+try {
+    const response = await fetch('api_link', {
+
+        method: 'POST/GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': csrfToken
+        },
+        credentials: "include",
+        body: JSON.stringify(formData),
+    });
+    console.log(response);
+
+    if (response.status === 200) {
+        setResponseMessage('Login successful.');
+    }
+} catch (error) {
+    setResponseMessage('Error logging in.');
+    console.error(error);
+}

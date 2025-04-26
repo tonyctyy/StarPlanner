@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>刪除你的學習方法</h2>
+
+  <table class="table table-striped">
+    <tr>
+      <th style="width: 20%">方法内容</th>
+      <th style="width: 30%;">詳細描述</th>
+      <th style="width: 20%;">個人化内容</th>
+      <th style="width: 12.5%">相關目標</th>
+      <th style="width: 5%"></th>
+  {% for method in method_list%}
+    <tr>
+        <td><h5>{{ method.name }}:</h5>{{ method.description }}</td>
+        <td>{{ method.method.detail_description_chin }}</td>
+        <td>{{ method.personalization }}</td>
+        <td>{{ method.related_goal.name }}</td>
+        <td>
+            <a href="{% url 'study_method_delete' method.id %}" class="btn btn-danger">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

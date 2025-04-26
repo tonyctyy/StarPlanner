@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="table-container">
+    <table class="table table-striped"> 
+        <thead> 
+            <tr>
+                <th style="width: 20%">方法内容</th>
+                <th style="width: 30%;">詳細描述</th>
+                <th style="width: 20%;">個人化内容</th>
+                <th style="width: 12.5%">相關目標</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><h5>{{ method.name }}:</h5>{{ method.description }}</td>
+                <td>{{ method.method.detail_description_chin }}</td>
+                <td>{{ method.personalization }}</td>
+                <td>{{ method.related_goal.name }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">提交評估</button>
+</form>    
+
+{% endblock %}

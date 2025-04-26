@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>任務評估</h2>
+    <table class="table table-striped">
+      <tr>
+        <th style="width: 15%">你的任務</th>
+        <th style="width: 12.5%">相關科目</th>
+        <th style="width: 12.5%" >相關目標</th>
+        <th style="width: 12.5%">相關方法</th>
+        <th style="width: 12.5%">相關任務</th>
+        <th style="width: 10%">優先度</th>
+        <th style="width: 15%">預計完成日期</th>
+      </tr>
+      <tr>
+        <td><h5>{{ task.name }}:</h5>{{ task.description }}</td>
+        <td>{{ task.subject_name }}</td>
+        <td>{{ task.goal_name }}</td>
+        <td>{{ task.method_name }}</td>
+        <td>{{ task.task_name }}</td>
+        <td>{{ task.priority }}</td>
+        <td>{{ task.predicted_end_time|date:"j F Y"}}</td>
+      </tr>
+    </table>
+
+  <form method="post">
+    {% csrf_token %}
+    {% for field in form %}
+      <div class="form-group">
+        {{ field.label_tag }}
+        {% if field.help_text %}
+          <small class="form-text text-muted">{{ field.help_text }}</small>
+        {% endif %}
+        {% if field.errors %}
+          {% for error in field.errors %}
+            <p style="color: red">{{ error }}</p>
+          {% endfor %}
+        {% endif %}
+        {{ field }}
+      </div>
+    {% endfor %}
+    
+    {% if form.non_field_errors %}
+    <div class="alert alert-danger" role="alert">
+      {% for error in form.non_field_errors %}
+        <p style="color: red">{{ error }}</p>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <button type="submit" class="btn btn-success">提交評估</button>
+  </form>
+{% endblock %}

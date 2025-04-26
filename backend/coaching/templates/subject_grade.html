@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>學科成績</h2>
+{% if last_grade_date %}
+  <table class="table table-striped"> 
+    <thead> 
+      <tr> 
+        <th>上次記錄日期 - {{last_grade_date.created_at|date:"j F Y"}}</th> 
+      </tr> 
+      <tr> 
+        <th>學科</th> 
+        <th>成績</th> 
+      </tr> 
+      {% for subject, grade in last_subject_grades %} 
+      <tr> 
+        <td>{{ subject }}</td> 
+        <td>{{ grade }}</td> 
+      </tr> 
+      {% endfor %} 
+    </thead> 
+  </table> 
+{% endif %}
+
+<br>
+<h3>新增學科成績記錄</h3>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">新增記錄</button>
+  </form>
+{% endblock %}

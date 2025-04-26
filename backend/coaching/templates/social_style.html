@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>待人處事風格測試</h2> 
+<p>請選擇最符合你在與人相處或處事時的形容詞，盡量保持在10秒内完成每條問題。</p>  
+  <form method="post">
+    {% csrf_token %}
+
+    {% if role == 'coach' %}
+      {% for field in student_form %}
+        <div class="form-group" style="width: 450px;">{{ field.label_tag }} {{ field.errors }}
+          {{ field }}</div>
+      {% endfor %}
+      {{ student_form.non_field_errors }}
+    {% endif %}
+
+    {% for field in form %}
+      <p>
+        {{ field.label_tag }}<br />
+        {{ field }}
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </p>
+    {% endfor %}
+
+    <button type="submit" class="btn btn-success">提交</button>
+  </form>
+{% endblock %}

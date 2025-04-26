@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>刪除任務</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th style="width: 15%">你的任務</th>
+          <th style="width: 12.5%">相關科目</th>
+          <th style="width: 12.5%" >相關目標</th>
+          <th style="width: 12.5%">相關方法</th>
+          <th style="width: 12.5%">相關任務</th>
+          <th style="width: 10%">優先度</th>
+          <th style="width: 15%">預計完成日期</th>
+          <th style="width: 5%"></th>
+        </tr>
+        {% for task in task_list %}
+        <tr>
+          <td><h5>{{ task.name }}:</h5>{{ task.description }}</td>
+          <td>{{ task.subject_name }}</td>
+          <td>{{ task.goal_name }}</td>
+          <td>{{ task.method_name }}</td>
+          <td>{{ task.task_name }}</td>
+          <td>{{ task.priority }}</td>
+          <td>{{ task.predicted_end_time|date:"j F Y"}}</td>
+          <td>
+            <a href="{% url 'task_delete' task.id %}" class="btn btn-danger">刪除</a></td>
+        </tr>
+        {% endfor %}
+        
+        </thead>
+    </table>
+{% endblock %}

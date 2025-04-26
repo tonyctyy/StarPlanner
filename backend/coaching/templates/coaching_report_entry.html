@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Coaching Report</h2>
+
+    
+
+      <form method = 'post'>
+        {% csrf_token %}
+        {{student_form.as_p}}
+          
+        <button type="submit" class="btn btn-success">Proceed</button>
+      </form>
+  
+  <button type="button" class="btn btn-danger " onclick="window.location.href='../profile/'">Cancel</button>
+  
+
+{% endblock %}

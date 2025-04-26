@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Coaching Report</h2>
+
+  <button type="button" class="btn btn-primary" onclick="window.location.href='../s_and_c_record/'">S&C Record</button>
+  <button type="button" class="btn btn-primary" onclick="window.location.href='../academic_coaching_record/'">Academic Coaching Record</button>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    {% for error in form.non_field_errors %}
+      <p style="color: red">{{ error }}</p>
+    {% endfor %}
+    <button type="submit" class="btn btn-success">Next</button>
+  </form>
+
+  <table class = "table table-striped">
+    
+  {% for report in coaching_report_list %}
+    
+  {% endfor %}
+    
+{% endblock %}

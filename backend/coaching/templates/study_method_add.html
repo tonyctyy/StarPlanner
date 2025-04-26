@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>新增學習方法</h2>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th style="width: 20%">方法内容</th>
+                <th style="width: 40%;">詳細描述</th>
+                <th style="width: 12.5%">初階建議</th>
+                <th style="width: 12.5%">中階建議</th>
+                <th style="width: 12.5%">高階建議</th>
+            </tr>
+            <tr>
+                <td><h5>{{ method.name_chin }}:</h5>{{ method.description_chin }}</td>
+                <td>{{ method.detail_description_chin}}</td>
+                <td>{{ method.beginner_suggestions_chin }}</td>
+                <td>{{ method.intermediate_suggestions_chin }}</td>
+                <td>{{ method.advanced_suggestions_chin }}</td>
+            </tr>
+        </thead>        
+    </table>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">新增方法</button>
+    </form>    
+
+{% endblock %}

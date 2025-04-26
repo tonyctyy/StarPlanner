@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Coach Select</h2>
+  <form method="post">
+    {% csrf_token %}
+    {% for form in forms %}
+      {{ form.as_p }}
+    {% endfor %}
+    <button type="submit" class="btn btn-success">Next</button>
+  </form>
+{% endblock %}

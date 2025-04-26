@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Coaching Report</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Report ID</th>
+          <th>Report Date</th>
+          <th>Edit Report</th>
+        </tr>
+    {% for report in coaching_report_list %}
+        <tr>
+          <td>{{ report.section }}</td>
+          <td>{{ report.created_at }}</td>
+          <td><a href="{% url 'coaching_report_edit' report.id %}">Edit</a></td>
+        </tr>
+    {% endfor %}
+      </thead>
+    </table>
+
+        
+    
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-success">Proceed</button>
+    </form>
+      
+  
+  <button type="button" class="btn btn-danger " onclick="window.location.href='../profile/'">Cancel</button>
+  
+
+{% endblock %}

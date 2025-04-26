@@ -1,0 +1,94 @@
+/* styles.css */
+
+/* Method.tsx */
+
+.method {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  justify-items: center;
+  justify-content: left;
+  align-items: center;
+  display: flex;
+  text-align: left;
+  font-size: 22px;
+  width:-moz-fit-content;
+  width:fit-content;
+}
+
+/* Goals.tsx */
+
+.goal {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  text-align: center;
+  font-size: 22px;
+  width:-moz-fit-content;
+  width:fit-content;
+}
+
+.goal.phone{
+  font-size: 12px;
+}
+
+.goal.tablet{
+  font-size: 16px;
+}
+
+.goal.desktop{
+  font-size: 20px;
+}
+
+
+.task {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  justify-items: center;
+  justify-content: left;
+  align-items: center;
+  display: flex;
+  text-align: left;
+  font-size: 22px;
+  width:-moz-fit-content;
+  width:fit-content;
+}
+
+.colTitle {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tasks.tsx */
+
+
+.tagRow {
+  justify-content: flex-start;
+}
+
+.tag {
+  border-radius: 10px;
+  width: -moz-fit-content;
+  width: fit-content !important;
+  height: fit-content;
+  margin: 0 5px !important;
+}
+
+.goalTag {
+  composes: tag;
+  background: #f5c3c4;
+}
+
+.taskTag {
+  composes: tag;
+  background: #c3f5c4;
+}
+
+.methodTag {
+  composes: tag;
+  background: #c4c3f5;
+}

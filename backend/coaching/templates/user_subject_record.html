@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+  
+{% block content %}
+  <h2>請選擇你修讀的選修科</h2>
+  <form method="post">
+    {% csrf_token %}
+    {% for field in form %}
+      <p>
+        {{ field }}
+      </p>
+    {% endfor %}
+        {% for error in form.non_field_errors %}
+        <p style="color: red">{{ error }}</p>
+        {% endfor %}
+    <button type="submit" class="btn btn-success">Next</button>
+  </form>
+{% endblock %}
